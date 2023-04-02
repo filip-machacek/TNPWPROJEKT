@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <%- include("../partials/head") %>
+</head>
+
+<body id="page-top">
+
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <form
+                action="/contacts/"
+                method="post"
+                class="validated-form"
+        >
+            <div id="content">
+                <%- include("../partials/navbar") %>
+
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Vytvoření kontaktu</h1>
+                        <button class="btn btn-primary" type="submit">Uložit</button>
+                    </div>
+
+                    <%- include("../partials/flash") %>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Základní údaje</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="name">Jméno*</label>
+                                                <input class="form-control" id="name" name="contact[name]" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="surname">Příjmení*</label>
+                                                <input class="form-control" id="surname" name="contact[surname]"  type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="birthday">Datum narození</label>
+                                                <input class="form-control" id="birthday" name="contact[birthday]" type="date">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="email">Email</label>
+                                                <input class="form-control" id="email" name="contact[email]" type="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="phone">Telefon</label>
+                                                <input class="form-control" id="phone" name="contact[phone]" type="phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Adresa</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="mb-3">
+                                                <label for="street">Ulice</label>
+                                                <input class="form-control" id="street" name="contact[street]" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="mb-3">
+                                                <label for="house_number">Č. p.</label>
+                                                <input class="form-control" id="house_number" name="contact[house_number]" type="number">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="city">Město</label>
+                                                <input class="form-control" id="city" name="contact[city]" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="postcode">PSČ</label>
+                                                <input class="form-control" id="postcode" name="contact[postcode]" type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="country">Stát</label>
+                                                <input class="form-control" id="country" name="contact[country]" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Zaměstnání</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="position">Pozice</label>
+                                                <input class="form-control" id="position" name="contact[position]" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="company">Společnost</label>
+                                                <input class="form-control" id="company" name="contact[company]" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="department">Oddělení</label>
+                                                <input class="form-control" id="department" name="contact[department]" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Poznámka</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="note">Poznámka</label>
+                                                <textarea class="form-control" id="note" rows="8" name="contact[note]" type="text"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <%- include("../partials/footer") %>
+    </div>
+</div>
+
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<%- include("../partials/scripts") %>
+
+</body>
+
+</html>
