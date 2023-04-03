@@ -12,7 +12,7 @@
         <div id="content">
             <%- include("../partials/navbar") %>
             <div class="container-fluid">
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-auto">
                         <h1 class="h3 mb-0 text-gray-800">Detail kontaktu</h1>
                     </div>
@@ -20,12 +20,11 @@
                         <a href="/contacts/">
                             <button class="btn btn-primary" type="button">Zpět na seznam kontaktů</button>
                         </a>
-                        <a href="/contacts/<%=contact._id%>/edit">
+                        <a href="/contacts/<%= contact._id %>/edit">
                             <button class="btn btn-primary" type="button">Upravit</button>
                         </a>
                     </div>
                 </div>
-
 
                 <%- include("../partials/flash") %>
 
@@ -41,7 +40,7 @@
                                         <div class="mb-3">
                                             <label for="name">Jméno</label>
                                             <br>
-                                              <% if(contact.name){ %>
+                                            <% if(contact.name){ %>
                                                 <b><%= contact.name %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -52,7 +51,7 @@
                                         <div class="mb-3">
                                             <label for="surname">Příjmení</label>
                                             <br>
-                                              <% if(contact.surname){ %>
+                                            <% if(contact.surname){ %>
                                                 <b><%= contact.surname %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -63,7 +62,7 @@
                                         <div class="mb-3">
                                             <label for="birthday">Datum narození</label>
                                             <br>
-                                              <% if(contact.birthday){ %>
+                                            <% if(contact.birthday){ %>
                                                 <b><%= contact.birthday %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -74,7 +73,7 @@
                                         <div class="mb-3">
                                             <label for="email">Email</label>
                                             <br>
-                                              <% if(contact.email){ %>
+                                            <% if(contact.email){ %>
                                                 <b><%= contact.email %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -85,7 +84,7 @@
                                         <div class="mb-3">
                                             <label for="phone">Telefon</label>
                                             <br>
-                                              <% if(contact.phone){ %>
+                                            <% if(contact.phone){ %>
                                                 <b><%= contact.phone %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -108,7 +107,7 @@
                                         <div class="mb-3">
                                             <label for="street">Ulice</label>
                                             <br>
-                                              <% if(contact.street){ %>
+                                            <% if(contact.street){ %>
                                                 <b><%= contact.street %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -119,7 +118,7 @@
                                         <div class="mb-3">
                                             <label for="house_number">Č. p.</label>
                                             <br>
-                                              <% if(contact.house_number){ %>
+                                            <% if(contact.house_number){ %>
                                                 <b><%= contact.house_number %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -130,7 +129,7 @@
                                         <div class="mb-3">
                                             <label for="city">Město</label>
                                             <br>
-                                              <% if(contact.city){ %>
+                                            <% if(contact.city){ %>
                                                 <b><%= contact.city %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -141,7 +140,7 @@
                                         <div class="mb-3">
                                             <label for="postcode">PSČ</label>
                                             <br>
-                                              <% if(contact.postcode){ %>
+                                            <% if(contact.postcode){ %>
                                                 <b><%= contact.postcode %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -153,7 +152,7 @@
                                         <div class="mb-3">
                                             <label for="country">Stát</label>
                                             <br>
-                                              <% if(contact.country){ %>
+                                            <% if(contact.country){ %>
                                                 <b><%= contact.country %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -165,6 +164,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
@@ -177,7 +177,7 @@
                                         <div class="mb-3">
                                             <label for="position">Pozice</label>
                                             <br>
-                                              <% if(contact.position){ %>
+                                            <% if(contact.position){ %>
                                                 <b><%= contact.position %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -188,7 +188,7 @@
                                         <div class="mb-3">
                                             <label for="company">Společnost</label>
                                             <br>
-                                              <% if(contact.company){ %>
+                                            <% if(contact.company){ %>
                                                 <b><%= contact.company %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -199,7 +199,7 @@
                                         <div class="mb-3">
                                             <label for="department">Oddělení</label>
                                             <br>
-                                              <% if(contact.department){ %>
+                                            <% if(contact.department){ %>
                                                 <b><%= contact.department %> </b>
                                             <% } else{ %>
                                                 <i>Nevyplněno</i>
@@ -210,6 +210,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
@@ -232,7 +233,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

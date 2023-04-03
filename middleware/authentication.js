@@ -5,7 +5,6 @@ module.exports.isLoggedIn = (req, res, next) => {
     req.flash('error', 'Je vyžadováno přihlášení');
     return res.redirect('/login');
   } else {
-    //req.flash('success', 'User logged in');
     next();
   }
 };

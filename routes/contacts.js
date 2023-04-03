@@ -95,34 +95,5 @@ router.delete(
     })
 );
 
-/*
-// render a form for a new comment
 
-
-
-
-
-
-// data for creating a new comment are coming -> create a new comment -> redirect to list all comments
-
-
-// data for updating comment with :id is comming -> find and update comment -> redirect to list of all comments
-router.patch(
-  '/:id',
-  isLoggedIn,
-  isAuthor,
-  validateComment,
-  catchAsync(async (req, res) => {
-    const { id } = req.params;
-    const comment = await Comment.findByIdAndUpdate(id, {
-      ...req.body.comment,
-    });
-    req.flash('success', 'comment updated');
-    res.redirect(`/comments/${comment._id}`);
-  })
-);
-
-// id for deleting comment is coming -> find and delete comment -> redirect to list of all comments
-
-*/
 module.exports = router;

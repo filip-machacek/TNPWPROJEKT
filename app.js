@@ -67,13 +67,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// fake user registration
-/*app.get('/fakeUser', async (req, res) => {
-   const user = new User({ email: 'dd@dd.com', username: 'ddd' });
-  const newUser = await User.register(user, 'mypassword');
-  res.send(newUser);
-}); */
-
 app.use('/', userRouter);
 app.use('/contacts', contactsRouter);
 

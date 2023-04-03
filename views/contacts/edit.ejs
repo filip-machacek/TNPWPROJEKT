@@ -10,57 +10,119 @@
 <div id="wrapper">
     <div id="content-wrapper" class="d-flex flex-column">
         <form
-                action="/contacts/<%= contact.id%>?_method=PATCH"
+                action="/contacts/<%= contact.id %>?_method=PATCH"
                 method="post"
                 class="validated-form"
         >
-        <div id="content">
-            <%- include("../partials/navbar") %>
+            <div id="content">
+                <%- include("../partials/navbar") %>
 
-            <div class="container-fluid">
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Úprava kontaktu</h1>
-                    <button class="btn btn-primary" type="submit">Uložit</button>
-                </div>
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-auto">
+                            <h1 class="h3 mb-0 text-gray-800">Úprava kontaktu</h1>
+                        </div>
+                        <div class="col-auto ml-auto">
+                            <a href="/contacts/<%= contact.id %>">
+                                <button class="btn btn-primary" type="button">Ukončit editaci</button>
+                            </a>
+                            <button class="btn btn-primary" type="submit">Uložit</button>
+                        </div>
+                    </div>
 
-                <%- include("../partials/flash") %>
+                    <%- include("../partials/flash") %>
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Základní údaje</h6>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Základní údaje</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="name">Jméno*</label>
+                                                <input class="form-control" id="name" name="contact[name]"
+                                                       value="<%= contact.name %>" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="surname">Příjmení*</label>
+                                                <input class="form-control" id="surname" name="contact[surname]"
+                                                       value="<%= contact.surname %>" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="birthday">Datum narození</label>
+                                                <input class="form-control" id="birthday" name="contact[birthday]"
+                                                       value="<%= contact.birthday %>" type="date">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="email">Email</label>
+                                                <input class="form-control" id="email" name="contact[email]"
+                                                       value="<%= contact.email %>" type="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="phone">Telefon</label>
+                                                <input class="form-control" id="phone" name="contact[phone]"
+                                                       value="<%= contact.phone %>" type="phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="name">Jméno*</label>
-                                            <input class="form-control" id="name" name="contact[name]" value="<%= contact.name %>" type="text" required>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Adresa</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="mb-3">
+                                                <label for="street">Ulice</label>
+                                                <input class="form-control" id="street" name="contact[street]"
+                                                       value="<%= contact.street %>" type="text">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="surname">Příjmení*</label>
-                                            <input class="form-control" id="surname" name="contact[surname]" value="<%= contact.surname %>" type="text" required>
+                                        <div class="col-4">
+                                            <div class="mb-3">
+                                                <label for="house_number">Č. p.</label>
+                                                <input class="form-control" id="house_number"
+                                                       name="contact[house_number]" value="<%= contact.house_number %>"
+                                                       type="number">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="birthday">Datum narození</label>
-                                            <input class="form-control" id="birthday" name="contact[birthday]" value="<%= contact.birthday %>" type="date">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="city">Město</label>
+                                                <input class="form-control" id="city" name="contact[city]"
+                                                       value="<%= contact.city %>" type="text">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="email">Email</label>
-                                            <input class="form-control" id="email" name="contact[email]" value="<%= contact.email %>" type="email">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="postcode">PSČ</label>
+                                                <input class="form-control" id="postcode" name="contact[postcode]"
+                                                       value="<%= contact.postcode %>" type="text">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="phone">Telefon</label>
-                                            <input class="form-control" id="phone" name="contact[phone]" value="<%= contact.phone %>" type="phone">
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="country">Stát</label>
+                                                <input class="form-control" id="country" name="contact[country]"
+                                                       value="<%= contact.country %>" type="text">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -68,100 +130,62 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Adresa</h6>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Zaměstnání</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="position">Pozice</label>
+                                                <input class="form-control" id="position" name="contact[position]"
+                                                       value="<%= contact.position %>" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="company">Společnost</label>
+                                                <input class="form-control" id="company" name="contact[company]"
+                                                       value="<%= contact.company %>" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="department">Oddělení</label>
+                                                <input class="form-control" id="department" name="contact[department]"
+                                                       value="<%= contact.department %>" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <div class="mb-3">
-                                            <label for="street">Ulice</label>
-                                            <input class="form-control" id="street" name="contact[street]" value="<%= contact.street %>" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mb-3">
-                                            <label for="house_number">Č. p.</label>
-                                            <input class="form-control" id="house_number" name="contact[house_number]" value="<%= contact.house_number %>" type="number">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="city">Město</label>
-                                            <input class="form-control" id="city" name="contact[city]" value="<%= contact.city %>" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="postcode">PSČ</label>
-                                            <input class="form-control" id="postcode" name="contact[postcode]" value="<%= contact.postcode %>" type="text">
-                                        </div>
-                                    </div>
+                        </div>
 
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="country">Stát</label>
-                                            <input class="form-control" id="country" name="contact[country]" value="<%= contact.country %>" type="text">
+                        <div class="col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Poznámka</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="note">Poznámka</label>
+                                                <textarea class="form-control" id="note" rows="8" name="contact[note]"
+                                                          type="text"><%= contact.note %></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Zaměstnání</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="position">Pozice</label>
-                                            <input class="form-control" id="position" name="contact[position]" value="<%= contact.position %>" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="company">Společnost</label>
-                                            <input class="form-control" id="company" name="contact[company]" value="<%= contact.company %>" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="department">Oddělení</label>
-                                            <input class="form-control" id="department" name="contact[department]" value="<%= contact.department %>" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Poznámka</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="note">Poznámka</label>
-                                            <textarea class="form-control" id="note" rows="8" name="contact[note]" type="text"><%= contact.note %></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
         <%- include("../partials/footer") %>
     </div>
@@ -174,5 +198,4 @@
 <%- include("../partials/scripts") %>
 
 </body>
-
 </html>
